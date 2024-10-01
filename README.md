@@ -8,7 +8,7 @@ https://youtu.be/yVvTy84mEw0
 
 # Android APK
 
-[TBA](https://github.com/ahmad-hamidi/WorkerManager/blob/master/app-release.apk)
+https://github.com/ahmad-hamidi/WorkerManager/blob/master/app-release.apk
 
 # Tech Stack
 
