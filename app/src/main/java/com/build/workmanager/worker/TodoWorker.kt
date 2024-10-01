@@ -1,5 +1,6 @@
 package com.build.workmanager.worker
 
+import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context
 import android.media.RingtoneManager
@@ -35,7 +36,13 @@ class TodoWorker(private var context: Context, private var workerParams: WorkerP
 
     private fun showReminderNotification(title: String?) {
         val notificationId = Random.nextInt(1, 99)
-        val notification = NotificationCompat.Builder(context, "test1")
+        val channelId = "thing"
+
+        val channel = NotificationChannel(channelId, channelId, NotificationManager.IMPORTANCE_HIGH)
+        val manager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+        manager.createNotificationChannel(channel)
+
+        val notification = NotificationCompat.Builder(context, channelId)
             .setContentTitle(title)
             .setColor(ContextCompat.getColor(context, R.color.purple_200))
             .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
@@ -44,8 +51,7 @@ class TodoWorker(private var context: Context, private var workerParams: WorkerP
             .setAutoCancel(true)
             .build()
 
-        context.getSystemService(NotificationManager::class.java).notify(notificationId, notification)
-        //NotificationManagerCompat.from(context).notify(notificationId, notification)
+        manager.notify(notificationId, notification)
     }
 
     companion object {

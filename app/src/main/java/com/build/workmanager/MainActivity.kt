@@ -66,7 +66,7 @@ class MainActivity : ComponentActivity() {
                 var nameFieldValue by rememberSaveable { mutableStateOf("") }
                 var minutesFieldValue by rememberSaveable { mutableStateOf("") }
                 val nameListener: (String) -> Unit = {
-                    nameFieldValue = it
+                    nameFieldValue = it.trim()
                 }
                 val minutesListener: (String) -> Unit = {
                     minutesFieldValue = it
@@ -185,7 +185,7 @@ fun Content(
     }
 
     Column {
-        Spacer(modifier = Modifier.height(16.dp))
+        Spacer(modifier = Modifier.height(32.dp))
         Text(
             text = "Create Your Reminder by One time or Periodically!",
             fontSize = 20.sp
