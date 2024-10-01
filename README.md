@@ -4,11 +4,11 @@ Create your reminder in local with notification
 
 # Demo Video
 
-TBA
+https://youtu.be/yVvTy84mEw0
 
 # Android APK
 
-TBA
+[TBA](https://github.com/ahmad-hamidi/WorkerManager/blob/master/app-release.apk)
 
 # Tech Stack
 
